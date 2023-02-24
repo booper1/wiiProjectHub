@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/wiiProjectHub/static/css/main.073c9b0a.css",
-    "main.js": "/wiiProjectHub/static/js/main.635c7e45.js",
+    "main.js": "/wiiProjectHub/static/js/main.d4eb27f2.js",
     "static/js/787.e27de33c.chunk.js": "/wiiProjectHub/static/js/787.e27de33c.chunk.js",
     "static/media/logo.svg": "/wiiProjectHub/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/wiiProjectHub/index.html",
     "main.073c9b0a.css.map": "/wiiProjectHub/static/css/main.073c9b0a.css.map",
-    "main.635c7e45.js.map": "/wiiProjectHub/static/js/main.635c7e45.js.map",
+    "main.d4eb27f2.js.map": "/wiiProjectHub/static/js/main.d4eb27f2.js.map",
     "787.e27de33c.chunk.js.map": "/wiiProjectHub/static/js/787.e27de33c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.635c7e45.js"
+    "static/js/main.d4eb27f2.js"
   ]
 }
