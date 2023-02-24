@@ -1,23 +1,24 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
+  const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const d = new Date();
+  let dateDisplay = weekday[d.getDay()] + " " + (d.getMonth() + 1) + "/" + d.getDate();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>Wii</code> Project Hub.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+      <div className="content">
+        <a className="squircle" href="https://booper1.github.io/" target="_blank" rel="noreferrer">
+          <img src={logo} className="logo" alt="logo" />
         </a>
-      </header>
+
+        <h1>Under Contruction. <br/>Please come back later.</h1>
+      </div>
+      
+      <div className="footer">
+        <p className="date">{dateDisplay}</p>
+      </div>
     </div>
   );
 }
