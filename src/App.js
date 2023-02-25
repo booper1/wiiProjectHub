@@ -13,7 +13,7 @@ function App() {
           <img src={logo} className="logo" alt="logo" />
         </a>
 
-        <h1>Under Contruction. <br/>Please come back later.</h1>
+        <h1>Under Contruction.<br/>Please come back later.</h1>
       </div>
       
       <div className="footer">

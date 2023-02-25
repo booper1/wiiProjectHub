@@ -1,6 +1,17 @@
+@font-face {
+  font-family: "ShinGoBold";
+  src: local("ShinGoBold"), url("./fonts/ShinGo/ShinGoBold.otf") format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "RodinBokutohBold";
+  src: local("RodinBokutohBold"), url("./fonts/RodinBokutoh/RodinBokutohB.otf") format("opentype");
+  font-weight: bold;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'FOT-RodinBokutoh Pro', 
+  font-family: -apple-system, BlinkMacSystemFont, 
     'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

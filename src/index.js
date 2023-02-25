@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/ShinGo/ShinGoBold.otf';
+import './fonts/ShinGo/ShinGoDeBold.otf';
+import './fonts/ShinGo/ShinGoExLight.otf';
+import './fonts/ShinGo/ShinGoHeavy.otf';
+import './fonts/ShinGo/ShinGoLight.otf';
+import './fonts/ShinGo/ShinGoMedium.otf';
+import './fonts/ShinGo/ShinGoRegular.otf';
+
+import './fonts/RodinBokutoh/RodinBokutohB.otf';
+import './fonts/RodinBokutoh/RodinBokutohDB.otf';
+import './fonts/RodinBokutoh/RodinBokutohEB.otf';
+import './fonts/RodinBokutoh/RodinBokutohL.otf';
+import './fonts/RodinBokutoh/RodinBokutohL.otf';
+import './fonts/RodinBokutoh/RodinBokutohUB.otf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
