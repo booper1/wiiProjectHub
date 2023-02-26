@@ -30,3 +30,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::selection {
+  background: #34BEED; /* WebKit/Blink Browsers */
+  color: black;
+}
+
+::-moz-selection {
+  background: #34BEED; /* Gecko Browsers */
+  color: black;
+}
