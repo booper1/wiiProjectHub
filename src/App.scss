@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  &:active {
+    cursor: url(./wii_click.cur) 11 3, auto;
+  }
 
   .content {
     flex: auto;
@@ -16,8 +19,8 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1rem;
-      max-width: 80vw;
+      gap: 0.5rem;
+      max-width: 90vw;
     }
   }
 
@@ -44,104 +47,20 @@
   }
 }
 
-.link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  --width: 390px;
-	font-family: 'ShinGoBold';
-  width: var(--width);
-  height: calc(var(--width) * 0.55);
-  transition: all 0.2s ease;
-	// common SQUIRCLE props
-	--squircle-radius: 30px;
-	--squircle-smooth: 0.7; //Default value
-
-  &_fill {
-    background-image: url(./emptyChannel.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-		// SQUIRCLE props
-		mask: paint(squircle);
-		// Hover effect		
-		&:hover {
-      filter: brightness(90%);
-		}
-	}
-
-  &_outline {
-		position: relative;
-		
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			z-index:0;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: #B4B4B4;
-			// SQUIRCLE props
-			mask: paint(squircle);
-			--squircle-outline: 5px;
-		}
-	}
-
-  a {
-		color: #B4B4B4;
-		text-decoration: none;
-    font-size: 40px;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-	}
-}
-
 .myLogo {
   height: 80%;
-}
-	
-.link_fill.homebrew {
-  background-image: url(https://cdn.dribbble.com/users/187144/screenshots/1554808/wii.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.link_fill.mii {
-  background-image: url(https://i.ytimg.com/vi/i_afrkky-dk/maxresdefault.jpg);
-  background-repeat: no-repeat;
-  background-position: 50% 15%;
-  background-size: cover;
-}
-
-.link_fill.photo {
-  background-image: url(https://vgmsite.com/soundtracks/wii-photo-channel/Photo%20Channel%20Soundtrack.png);
-  background-repeat: no-repeat;
-  background-position: 50% 15%;
-  background-size: cover;
-}
-
-.link_fill.shop {
-  background-image: url(https://i.ytimg.com/vi/yyjUmv1gJEg/maxresdefault.jpg);
-  background-repeat: no-repeat;
-  background-position: 50% 15%;
-  background-size: cover;
-}
-
-.link_fill.booper {
-  background: #333;
-  background-repeat: no-repeat;
-  background-position: 50% 15%;
-  background-size: cover;
 }
 
 h1 {
   text-align: center;
   font-family: 'ShinGoBold';
+}
+
+svg {
+  width: 400px;
+  height: auto;
+  transition: all 0.2s ease;
+  &:hover {
+    filter: brightness(90%);
+  }
 }
