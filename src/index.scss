@@ -9,6 +9,13 @@
   font-weight: bold;
 }
 
+html {
+  min-height: 100%; /* Look, it's not fixed anymore! */
+
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 
@@ -17,13 +24,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f4f4;
+  background: repeating-linear-gradient(
+    #f5f5f5, #f5f5f5 3px, #e4e4e4 3px, #e4e4e4 9px
+  );
   cursor: url(./wii_pointer.cur) 11 3, auto;
-}
-
-.root {
-  height: 100%;
-  width: 100%;
+  flex-grow: 1;
 }
 
 code {

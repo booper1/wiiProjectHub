@@ -13,7 +13,7 @@ function App() {
         <div className="channels">
           <Channel type="booper" color="#333" link="https://booper1.github.io/" icon = "true"></Channel>
           <Channel type="mii"></Channel>
-          <Channel type="photo" pos="xMidYMin slice"></Channel>
+          <Channel type="photo" par="xMidYMin slice"></Channel>
           <Channel type="shop"></Channel>
           <Channel type="homebrew"></Channel>
           <Channel type="empty"></Channel>
@@ -34,7 +34,7 @@ function App() {
   );
 }
 
-function Channel({type, color = "", pos = "xMidYMid slice", link = "", icon = false}) {
+function Channel({type, color = "", par = "xMidYMid slice", link = "", icon = false}) {
   const images = {
     "homebrew": "https://cdn.dribbble.com/users/187144/screenshots/1554808/wii.png",
     "mii": "https://i.ytimg.com/vi/i_afrkky-dk/maxresdefault.jpg",
@@ -49,42 +49,63 @@ function Channel({type, color = "", pos = "xMidYMid slice", link = "", icon = fa
     <image x="50%" y="50%" width="300" height="300" href={logo} transform="translate(-150,-150)"/>
   }
 
-  var pathTag =
-  <path fill={color==="" ? `url(#${type})` : color} stroke="#b4b4b4" stroke-width="12" stroke-linecap="butt" d="
-          M 0,275
-          C 5,-20 -20,5 275,0
-          L 275,0 725,0
-          C 1020,5 995,-20 1000,275
-            995,570 1020,545 725,550
-          L 725,550 275,550
-          C -20,545 5,570 0,275
-            5,-20 -20,5 275,0
-          " />;
+  var useTag =
+      <use
+        xlinkHref="#channel"
+        strokeWidth={24}
+        stroke="#b4b4b4"
+        fill={color==="" ? `url(#${type})` : color}
+        clipPath="url(#insideChannelOnly)"
+      />
 
-  var linked;
+  var tag;
   if (link) {
-    linked =
+    tag =
       <a href={link} target="_blank" rel="noreferrer">
-        {pathTag}
+        {useTag}
       </a>;
   }
   else {
-    linked = pathTag;
+    tag = useTag;
   }
 
   return (
-    <svg id="a"
-         xmlns="http://www.w3.org/2000/svg"
-         width="1000"
-         height="550"
-         viewBox="-10 -10 1020 570"
-         className={`${type} channel`}>
+    <svg viewBox="0 0 1000 550"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          className={`${type} channel`}>
         <defs>
-          <pattern id={type} patternUnits="userSpaceOnUse" width="1000" height="550">
-            <image href={image} x="-10" y="-10" width="1030" height="580" preserveAspectRatio={pos} />
+          <path
+            id="channel"
+            d="M 0,275
+              C 5,-20 -20,5 275,0
+              L 275,0 725,0
+              C 1020,5 995,-20 1000,275
+                995,570 1020,545 725,550
+              L 725,550 275,550
+              C -20,545 5,570 0,275
+                5,-20 -20,5 275,0"
+          />
+          <clipPath id="insideChannelOnly">
+            <use xlinkHref="#channel" />
+          </clipPath>
+          <pattern
+            id={type}
+            patternUnits="userSpaceOnUse"
+            width={1000}
+            height={550}
+          >
+            <image
+              href={image}
+              x={0}
+              y={0}
+              width={1000}
+              height={550}
+              preserveAspectRatio={par}
+            />
           </pattern>
         </defs>
-        {linked}
+        {tag}
         {overlay}
     </svg>
   );
