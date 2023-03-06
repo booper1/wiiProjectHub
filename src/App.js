@@ -1,5 +1,5 @@
 import emptyChannel from './emptyChannel.png';
-import logo from './logo.svg';
+import c_logo from './c_logo.svg';
 import './App.scss';
 
 function App() {
@@ -11,12 +11,12 @@ function App() {
     <div className="App">
       <div className="content">
         <div className="channels">
-          <Channel type="booper" color="#333" link="https://booper1.github.io/" icon = "true"></Channel>
+          <Channel type="booper" color="#333" link="https://booper1.github.io/" inner="c_logo"></Channel>
           <Channel type="mii"></Channel>
           <Channel type="photo" par="xMidYMin slice"></Channel>
           <Channel type="shop"></Channel>
           <Channel type="homebrew"></Channel>
-          <Channel type="empty"></Channel>
+          <Channel type="tfletch" color="#eceae7" link="https://tfletch.tech/" inner="TFletch"></Channel>
           <Channel type="empty"></Channel>
           <Channel type="empty"></Channel>
           <Channel type="empty"></Channel>
@@ -34,7 +34,7 @@ function App() {
   );
 }
 
-function Channel({type, color = "", par = "xMidYMid slice", link = "", icon = false}) {
+function Channel({type, color = "", par = "xMidYMid slice", link = "", inner = false}) {
   const images = {
     "homebrew": "https://cdn.dribbble.com/users/187144/screenshots/1554808/wii.png",
     "mii": "https://i.ytimg.com/vi/i_afrkky-dk/maxresdefault.jpg",
@@ -44,9 +44,14 @@ function Channel({type, color = "", par = "xMidYMid slice", link = "", icon = fa
   const image = images[type] ?? emptyChannel;
 
   var overlay;
-  if (icon) {
-    overlay =
-    <image x="50%" y="50%" width="300" height="300" href={logo} transform="translate(-150,-150)"/>
+  switch (inner) {
+    case "c_logo":
+      overlay = <image x="50%" y="50%" width="300" height="300" href={c_logo} transform="translate(-150,-150)"/>;
+      break;
+    case "TFletch":
+      overlay = <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">{inner}</text>;
+      break;
+    default: break;
   }
 
   var useTag =
@@ -56,7 +61,7 @@ function Channel({type, color = "", par = "xMidYMid slice", link = "", icon = fa
         stroke="#b4b4b4"
         fill={color==="" ? `url(#${type})` : color}
         clipPath="url(#insideChannelOnly)"
-      />
+      />;
 
   var tag;
   if (link) {
