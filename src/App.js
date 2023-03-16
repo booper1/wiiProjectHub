@@ -1,117 +1,168 @@
-import emptyChannel from './emptyChannel.png';
-import c_logo from './c_logo.svg';
-import './App.scss';
+import emptyChannel from "./emptyChannel.png";
+import c_logo from "./c_logo.svg";
+import "./App.scss";
+const imported = { emptyChannel, c_logo };
 
 function App() {
-  const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const d = new Date();
-  let dateDisplay = weekday[d.getDay()] + " " + (d.getMonth() + 1) + "/" + d.getDate();
+  let dateDisplay =
+    weekday[d.getDay()] + " " + (d.getMonth() + 1) + "/" + d.getDate();
 
   return (
-    <div className="App">
-      <div className="content">
-        <div className="channels">
-          <Channel type="booper" color="#333" link="https://booper1.github.io/" inner="c_logo"></Channel>
-          <Channel type="mii"></Channel>
-          <Channel type="photo" par="xMidYMin slice"></Channel>
-          <Channel type="shop"></Channel>
-          <Channel type="homebrew"></Channel>
-          <Channel type="tfletch" color="#eceae7" link="https://tfletch.tech/" inner="TFletch"></Channel>
-          <Channel type="empty"></Channel>
-          <Channel type="empty"></Channel>
-          <Channel type="empty"></Channel>
-          <Channel type="empty"></Channel>
-          <Channel type="empty"></Channel>
-          <Channel type="empty"></Channel>
+    <div className='App'>
+      <div className='content'>
+        <div className='channels'>
+          <Channel
+            title='booper'
+            bgColor='#333'
+            link='https://booper1.github.io/'
+            innerContent='c_logo'
+          />
+          <Channel title='mii' />
+          <Channel
+            title='photo'
+            par='xMidYMin slice'
+          />
+          <Channel title='shop' />
+          <Channel title='homebrew' />
+          <Channel
+            title='tfletch'
+            bgColor='#eceae7'
+            link='https://tfletch.tech/'
+            innerContent='TFletch'
+          />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
         </div>
       </div>
-      
-      <div className="footer">
-        <h1>Under Contruction.<br/>Please come back later.</h1>
-        <p className="date">{dateDisplay}</p>
+
+      <div className='footer'>
+        <h1>
+          Under Contruction.
+          <br />
+          Please come back later.
+        </h1>
+        <p className='date'>{dateDisplay}</p>
       </div>
     </div>
   );
 }
 
-function Channel({type, color = "", par = "xMidYMid slice", link = "", inner = false}) {
+function Channel({
+  title = "emptyChannel",
+  bgColor,
+  par = "xMidYMid slice",
+  link = "",
+  innerContent = false
+}) {
   const images = {
-    "homebrew": "https://cdn.dribbble.com/users/187144/screenshots/1554808/wii.png",
-    "mii": "https://i.ytimg.com/vi/i_afrkky-dk/maxresdefault.jpg",
-    "photo": "https://vgmsite.com/soundtracks/wii-photo-channel/Photo%20Channel%20Soundtrack.png",
-    "shop": "https://i.ytimg.com/vi/yyjUmv1gJEg/maxresdefault.jpg"
+    homebrew: "https://tinyurl.com/nhhresxp",
+    mii: "https://tinyurl.com/y3wjcxks",
+    photo: "https://tinyurl.com/yzkpyd7x",
+    shop: "https://tinyurl.com/r454yswc"
   };
-  const image = images[type] ?? emptyChannel;
+  const image = images[title] ?? imported[title];
 
   var overlay;
-  switch (inner) {
+  switch (innerContent) {
     case "c_logo":
-      overlay = <image x="50%" y="50%" width="300" height="300" href={c_logo} transform="translate(-150,-150)"/>;
+      overlay = (
+        <image
+          x='50%'
+          y='50%'
+          width='300'
+          height='300'
+          href={imported[innerContent]}
+          transform='translate(-150,-150)'
+        />
+      );
       break;
     case "TFletch":
-      overlay = <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">{inner}</text>;
+      overlay = (
+        <text
+          x='50%'
+          y='50%'
+          dominant-baseline='middle'
+          text-anchor='middle'
+        >
+          {innerContent}
+        </text>
+      );
       break;
-    default: break;
+    default:
+      break;
   }
 
-  var useTag =
-      <use
-        xlinkHref="#channel"
-        strokeWidth={24}
-        stroke="#b4b4b4"
-        fill={color==="" ? `url(#${type})` : color}
-        clipPath="url(#insideChannelOnly)"
-      />;
+  var useTag = (
+    <use
+      xlinkHref='#channel'
+      strokeWidth={24}
+      stroke='#b4b4b4'
+      fill={bgColor == null ? `url(#${title})` : bgColor}
+      clipPath='url(#insideChannelOnly)'
+    />
+  );
 
   var tag;
   if (link) {
-    tag =
-      <a href={link} target="_blank" rel="noreferrer">
+    tag = (
+      <a
+        href={link}
+        target='_blank'
+        rel='noreferrer'
+      >
         {useTag}
-      </a>;
-  }
-  else {
+      </a>
+    );
+  } else {
     tag = useTag;
   }
 
   return (
-    <svg viewBox="0 0 1000 550"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          className={`${type} channel`}>
-        <defs>
-          <path
-            id="channel"
-            d="M 0,275
+    <svg
+      viewBox='0 0 1000 550'
+      xmlns='http://www.w3.org/2000/svg'
+      xmlnsXlink='http://www.w3.org/1999/xlink'
+      className={`${title} channel`}
+    >
+      <defs>
+        <path
+          id='channel'
+          d='M 0,275
               C 5,-20 -20,5 275,0
               L 275,0 725,0
               C 1020,5 995,-20 1000,275
                 995,570 1020,545 725,550
               L 725,550 275,550
               C -20,545 5,570 0,275
-                5,-20 -20,5 275,0"
-          />
-          <clipPath id="insideChannelOnly">
-            <use xlinkHref="#channel" />
-          </clipPath>
-          <pattern
-            id={type}
-            patternUnits="userSpaceOnUse"
+                5,-20 -20,5 275,0'
+        />
+        <clipPath id='insideChannelOnly'>
+          <use xlinkHref='#channel' />
+        </clipPath>
+        <pattern
+          id={title}
+          patternUnits='userSpaceOnUse'
+          width={1000}
+          height={550}
+        >
+          <image
+            href={image}
+            x={0}
+            y={0}
             width={1000}
             height={550}
-          >
-            <image
-              href={image}
-              x={0}
-              y={0}
-              width={1000}
-              height={550}
-              preserveAspectRatio={par}
-            />
-          </pattern>
-        </defs>
-        {tag}
-        {overlay}
+            preserveAspectRatio={par}
+          />
+        </pattern>
+      </defs>
+      {tag}
+      {overlay}
     </svg>
   );
 }
