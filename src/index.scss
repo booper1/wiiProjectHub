@@ -35,6 +35,22 @@ body {
   flex-grow: 1;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  //background-color: #f4f4f4;
+  background-image: linear-gradient(
+    to right,
+    #f4f4f400,
+    #f4f4f4 50%,
+    #f4f4f400 100%
+  );
+  &:active {
+    cursor: url(./wii_click.cur) 11 3, auto;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
