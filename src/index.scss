@@ -10,6 +10,12 @@
     url("./fonts/RodinBokutoh/RodinBokutohB.otf") format("opentype");
   font-weight: bold;
 }
+@font-face {
+  font-family: "DigitalDisplay";
+  src: local("DigitalDisplay"),
+    url("./fonts/DigitalDisplay/digital-display.otf") format("opentype");
+  font-weight: normal;
+}
 
 html {
   min-height: 100%; /* Look, it's not fixed anymore! */
@@ -46,22 +52,9 @@ body {
     #f4f4f4 50%,
     #f4f4f400 100%
   );
+  user-select: none;
+  --relative-height: 27vh;
   &:active {
     cursor: url(./wii_click.cur) 11 3, auto;
   }
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-::selection {
-  background: #34beed; /* WebKit/Blink Browsers */
-  color: black;
-}
-
-::-moz-selection {
-  background: #34beed; /* Gecko Browsers */
-  color: black;
 }

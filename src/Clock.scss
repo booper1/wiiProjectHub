@@ -1,0 +1,65 @@
+.clockWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+
+  .time {
+    padding-inline-start: 8px;
+    font-family: "DigitalDisplay";
+    color: #919191;
+    font-size: 100px;
+
+    .colon {
+      display: inline-block;
+      transition: opacity 0.1s ease-in-out;
+      opacity: 1;
+    }
+
+    .colon.hidden {
+      opacity: 0;
+    }
+  }
+
+  .timeContainer {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #919191;
+    margin-bottom: 8px;
+
+    .timeCore {
+      padding-inline-start: 8px;
+      font-family: "DigitalDisplay";
+      font-size: 6.5rem;
+
+      .colon {
+        display: inline-block;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+      }
+
+      .colon.hidden {
+        opacity: 0;
+      }
+    }
+
+    .ampm {
+      font-family: "RodinBokutohBold";
+      position: absolute;
+      right: -4ch;
+      top: 1ch;
+      font-size: 2rem;
+    }
+  }
+
+  .date {
+    font-family: "RodinBokutohBold";
+    color: #7a7a7a;
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+}

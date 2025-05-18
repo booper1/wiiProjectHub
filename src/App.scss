@@ -22,29 +22,15 @@
 .footer {
   z-index: 1;
   box-sizing: border-box;
-  border-top: calc(27vh * 5 / 277) solid #34beed;
-  background-color: #ddd;
   width: 100vw;
-  height: 27vh;
-  box-shadow: inset 0 calc(27vh * 50 / 277) calc(27vh * 25 / 277)
-    calc(27vh * -7 / 277) rgba(0, 0, 0, 0.1);
+  height: var(--relative-height);
+
+  background-image: url("/footer.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top center;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "RodinBokutohBold";
-  gap: calc(100vw * 80 / 2048);
-  padding: 0px calc(27vh * 20 / 277);
-
-  h1 {
-    text-align: center;
-    font-size: calc(27vh * 32 / 277);
-    font-family: "ShinGoBold";
-  }
-
-  .date {
-    color: #888;
-    font-size: calc(27vh * 50 / 277);
-    font-weight: bold;
-    text-align: center;
-  }
 }

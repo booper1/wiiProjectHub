@@ -1,14 +1,12 @@
-import React from "react";
-import Channel from "./Channel";
-
 import "./App.scss";
+import Channel from "./Channel";
+import Clock from "./Clock";
+
+// REFERENCE
+// https://www.youtube.com/watch?v=k4Za0tkFQq8
+// https://www.youtube.com/watch?v=UldvTh4BJc0
 
 function App() {
-  const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const d = new Date();
-  let dateDisplay =
-    weekday[d.getDay()] + " " + (d.getMonth() + 1) + "/" + d.getDate();
-
   return (
     <>
       <div className='content'>
@@ -58,12 +56,7 @@ function App() {
       </div>
 
       <div className='footer'>
-        <h1>
-          Under Contruction.
-          <br />
-          Please come back later.
-        </h1>
-        <p className='date'>{dateDisplay}</p>
+        <Clock />
       </div>
     </>
   );
