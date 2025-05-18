@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/wiiProjectHub/static/css/main.a1d7607f.css",
-    "main.js": "/wiiProjectHub/static/js/main.00d60138.js",
-    "static/js/787.e27de33c.chunk.js": "/wiiProjectHub/static/js/787.e27de33c.chunk.js",
+    "main.css": "/wiiProjectHub/static/css/main.b0ed18f8.css",
+    "main.js": "/wiiProjectHub/static/js/main.6f9b6a82.js",
+    "static/js/453.83269e90.chunk.js": "/wiiProjectHub/static/js/453.83269e90.chunk.js",
     "static/media/ShinGoBold.otf": "/wiiProjectHub/static/media/ShinGoBold.18431051c12386968e00.otf",
     "static/media/RodinBokutohB.otf": "/wiiProjectHub/static/media/RodinBokutohB.3696121ba25ad31eda9a.otf",
     "static/media/emptyChannel.png": "/wiiProjectHub/static/media/emptyChannel.d3632a0a60d933c980d7.png",
+    "static/media/digital-display.otf": "/wiiProjectHub/static/media/digital-display.76044c4d1ae3c40c2629.otf",
     "static/media/wii_click.cur": "/wiiProjectHub/static/media/wii_click.4ffc8b85282dd371b543.cur",
+    "static/media/footer.svg": "/wiiProjectHub/static/media/footer.e0cbf6b04bec94bae008.svg",
     "static/media/wii_pointer.cur": "/wiiProjectHub/static/media/wii_pointer.48bf91c85ca3fe01a1e1.cur",
     "static/media/c_logo.svg": "/wiiProjectHub/static/media/c_logo.dfcefb45127f5ce80f226524bba5b620.svg",
     "index.html": "/wiiProjectHub/index.html",
-    "main.a1d7607f.css.map": "/wiiProjectHub/static/css/main.a1d7607f.css.map",
-    "main.00d60138.js.map": "/wiiProjectHub/static/js/main.00d60138.js.map",
-    "787.e27de33c.chunk.js.map": "/wiiProjectHub/static/js/787.e27de33c.chunk.js.map"
+    "main.b0ed18f8.css.map": "/wiiProjectHub/static/css/main.b0ed18f8.css.map",
+    "main.6f9b6a82.js.map": "/wiiProjectHub/static/js/main.6f9b6a82.js.map",
+    "453.83269e90.chunk.js.map": "/wiiProjectHub/static/js/453.83269e90.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1d7607f.css",
-    "static/js/main.00d60138.js"
+    "static/css/main.b0ed18f8.css",
+    "static/js/main.6f9b6a82.js"
   ]
 }
