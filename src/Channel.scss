@@ -4,8 +4,7 @@ $size: 365;
   height: auto;
   transition: filter 0.2s ease;
   pointer-events: none;
-  &:hover,
-  &:focus-within {
+  &:hover {
     filter: brightness(90%) drop-shadow(0px 0px 3px #34beed);
     use {
       stroke: #34beed;
